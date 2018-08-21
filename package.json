@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/duongtdn/enroll-server#readme",
   "devDependencies": {
+    "database-abstractor": "^1.0.0",
     "database-test-helper": "^1.0.0",
     "enrolldb-test-helper": "^1.0.0",
+    "enrolldb-dynamodb-driver": "^1.0.0",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "body-parser": "^1.18.2",
