@@ -4,6 +4,7 @@ const api = require('../api/main')
 
 const DatabaseAbstractor = require("database-abstractor")
 const enroll = new DatabaseAbstractor();
+const invoice = new DatabaseAbstractor();
 
 const DB = {
   HOST: process.env.DB_HOST || 'http://localhost',
@@ -15,7 +16,12 @@ enroll.use(require('enrolldb-dynamodb-driver')({
   endpoint : `${DB.HOST}:${DB.PORT}`
 }))
 
-api.useDatabase({ enroll })
+invoice.use(require('invoicedb-dynamodb-driver')({
+  region : 'us-west-2', 
+  endpoint : `${DB.HOST}:${DB.PORT}`
+}))
+
+api.useDatabase({ enroll, invoice })
 
 /* create express app from api */
 const express = require('express')
