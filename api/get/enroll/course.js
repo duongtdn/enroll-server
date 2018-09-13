@@ -14,8 +14,6 @@ function getEnroll(db) {
   return function(req, res, next) {
     const courseId = req.params && req.params.course;
     const uid = req.user.uid;
-    console.log(uid)
-    console.log(courseId)
     db.enroll.getEnroll({uid, courseId}, (err, data) => {
       req.enroll = data;
       console.log(data);
