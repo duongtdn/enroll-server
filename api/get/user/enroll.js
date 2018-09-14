@@ -26,18 +26,22 @@ function getUserEnroll(db) {
 function getInvoice(db) {
   return function(req, res, next) {
     const enrolls = req.enrolls;
-    const invoiceList= enrolls.map(e => e.invoice)
-    db.invoice.batchGetInvoices(invoiceList, (err, data) => {
-      if (err) {
-        res.status(400).send();
-      } else {
-        req.invoices = {};
-        data.forEach(invoice => {
-          req.invoices[invoice.number] = invoice
-        })
-        next();
-      }
-    })
+    if (enrolls && enrolls.length > 0) {
+      const invoiceList= enrolls.map(e => e.invoice)
+      db.invoice.batchGetInvoices(invoiceList, (err, data) => {
+        if (err) {
+          res.status(400).send();
+        } else {
+          req.invoices = {};
+          data.forEach(invoice => {
+            req.invoices[invoice.number] = invoice
+          })
+          next();
+        }
+      })
+    } else {
+      res.status(200).json({data : [] })
+    }
   }
 }
 
