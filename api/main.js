@@ -4,7 +4,8 @@ const api = require('express-api-binder')
 
 const funcs = [
   'get/enroll/:course',
-  'get/user/enroll'
+  'get/user/enroll',
+  'post/update/status'
 ]
 
 funcs.forEach(func => {

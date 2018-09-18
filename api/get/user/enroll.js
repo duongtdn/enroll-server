@@ -1,7 +1,5 @@
 "use strict"
 
-// NOT TESTED YET
-
 const { verifyToken } = require('@stormgle/jtoken-util')
 
 const secret = process.env.AUTH_KEY_SGLEARN;
