@@ -1,5 +1,5 @@
 {
-  "name": "enroll-server",
+  "name": "@sglearn/enroll-server",
   "version": "1.0.0",
   "description": "sglearn: enroll backend services",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/duongtdn/enroll-server.git"
+    "url": "git+https://github.com/sglearn/enroll-server.git"
   },
   "author": "duongtdn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/duongtdn/enroll-server/issues"
+    "url": "https://github.com/sglearn/enroll-server/issues"
   },
-  "homepage": "https://github.com/duongtdn/enroll-server#readme",
+  "homepage": "https://github.com/sglearn/enroll-server#readme",
   "devDependencies": {
     "database-abstractor": "^1.0.0",
     "database-test-helper": "^1.0.0",
